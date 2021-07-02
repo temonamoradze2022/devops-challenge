@@ -11,7 +11,8 @@ Your task is to:
 2. Create a deployment pipeline that will deploy the server and cronjob onto a Kubernetes cluster whenever the developer pushes to the repo.
 
 Bonus tasks:
-Incorporate the tests in the deployment pipeline.
+1. Add nginx in front of API as a reverse proxy using a self-signed certificate.
+2. Incorporate the tests in the deployment pipeline.
 
 Notes:
 Please fork this repo to your GitHub account and do all work in your fork.
