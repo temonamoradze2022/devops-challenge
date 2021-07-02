@@ -15,7 +15,7 @@ Incorporate the tests in the deployment pipeline.
 
 Notes:
 Please fork this repo to your GitHub account and do all work in your fork.
-For Kubernetes deployment, please utilize one of the free tiers/options available (https://github.com/learnk8s/free-kubernetes is useful)
+For Kubernetes deployment, please utilize one of the free tiers/options available (https://github.com/learnk8s/free-kubernetes is useful).
 If you are having issues obtaining a free K8, then please contact us as soon as possible.
 
 You will be given the contact information for the developer with whom you may ask questions just like in any real work situation. Feel free to contact the developer for any clarifications.
