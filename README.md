@@ -1,23 +1,50 @@
 # Tabeo DevOps Challenge
 
-A developer has created a system for booking space travel. The system has a server component that provides an API. It also has a cronjob component.
-Imagine that the developer provides you with the below information and associated source files. The developer asks you to help with:
-
-1. Create a Docker configuration to allow building and running of the server API on his local machine.
-2. Create a CI/CD flow to deploy the server API and also the cronjob to a Kubernetes cluster.
+A developer has created a system for booking space travel. The system has a server component that provides an API. 
+It also has a cronjob component.
 
 Your task is to:
-1. Create a Docker/Docker Compose configuration to build and run the server locally.
-2. Create a deployment pipeline that will deploy the server and cronjob onto a Kubernetes cluster whenever the developer pushes to the repo.
+1. Create a Github Actions pipeline that builds and pushes docker images on a docker registry (use https://hub.docker.com/). The action should be triggered with every commit in the main branch
+2. Deploy the application using kubernetes to a kubernetes cluster. Add the kubernetes yml files to a folder named k8s.
 
 Bonus tasks:
 1. Add nginx in front of API as a reverse proxy using a self-signed certificate.
 2. Incorporate the tests in the deployment pipeline.
 
-Notes:
+### Notes:
 Please fork this repo to your GitHub account and do all work in your fork.
-For Kubernetes deployment, please utilize one of the free tiers/options available (https://github.com/learnk8s/free-kubernetes is useful).
-If you are having issues obtaining a free K8, then please contact us as soon as possible.
+
+For Kubernetes deployment, you can either use K3s or one of the free tiers/options available (https://github.com/learnk8s/free-kubernetes is useful).
+
+For convenience we have provided a Vagrantfile.
+It setups a kubernetes cluster in your local machine.
+
+```
+vagrant up
+```
+After `vagrant up` is done you can ssh into the Vagrant environment and retrieve
+the kubernetes config used by kubectl.
+
+We want to copy this file's contents into our local environment so that kubectl knows how to communicate with the K3s cluster.
+
+```
+sudo cat /etc/rancher/k3s/k3s.yaml
+```
+
+Copy the content and type exit to exit the virtual OS. You will find yourself back in your computer's session.
+
+Create the file ~/.kube/config (or replace it if it already exists).
+
+Paste the contents of the k3s.yaml output into the config file.
+
+Test that kubectl works by running the command
+
+```
+kubectl describe services
+```
+
+It should not return any errors.
+
 
 You will be given the contact information for the developer with whom you may ask questions just like in any real work situation. Feel free to contact the developer for any clarifications.
 
