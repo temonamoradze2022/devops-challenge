@@ -4,7 +4,7 @@ A developer has created a system for booking space travel. The system has a serv
 It also has a cronjob component.
 
 Your task is to:
-1. Create a Github Actions pipeline that builds and pushes docker images on a docker registry (use https://hub.docker.com/). The action should be triggered with every commit in the main branch
+1. Create a Github Actions pipeline that builds and pushes docker images on a docker registry (use https://hub.docker.com/). The action should be triggered with every commit in the main branch.
 2. Deploy the application using kubernetes to a kubernetes cluster. Add the kubernetes yml files to a folder named k8s.
 
 Bonus tasks:
@@ -187,7 +187,7 @@ Sample Response Body:
 
 **Notice**:
 Results are paginated.
-Use the cursor as a query parameter to fetch the next page
+Use the cursor as a query parameter to fetch the next page.
 
 
 ## Run the tests
