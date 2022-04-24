@@ -44,7 +44,7 @@ Besides authentication and other helper steps, pipeline consists of following ma
 - Publish docker image (each new image is tagged with corresponding git commit hash)
 - Deploy application into GKE
 
-#Accessing booking-server application
+# Accessing booking-server application
 
 - GCP load balancer public IP is 35.187.68.90
 - host name is not configured for ingress, so it will serve content for IP or any host name alias
