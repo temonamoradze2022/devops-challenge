@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: $DEPLOYMENT_NAME
-          image: $IMAGE_NAME_TAG
+          image: $IMAGE_NAME:$GITHUB_SHA
           imagePullPolicy: Always
           ports:
             - containerPort: 5000

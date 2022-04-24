@@ -8,7 +8,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   DEPLOYMENT_NAME: booking-server
-  IMAGE_NAME_TAG: temonamoradze2022/$DEPLOYMENT_NAME:$GITHUB_SHA
+  IMAGE_NAME: temonamoradze2022/booking-server
   GKE_CLUSTER: cluster-1
   GKE_ZONE: europe-west1-b
 
@@ -49,12 +49,12 @@ jobs:
       - name: Build
         run: |-
           docker build \
-            --tag "$IMAGE_NAME_TAG" \
+            --tag "$IMAGE_NAME:$GITHUB_SHA" \
             .
       # Push the Docker image to container Registry
       - name: Publish
         run: |-
-          docker push "$IMAGE_NAME_TAG"
+          docker push "$IMAGE_NAME:$GITHUB_SHA"
       # Deploy the Docker image to the GKE cluster
       - name: Deploy
         run: |-
