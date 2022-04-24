@@ -50,7 +50,7 @@ metadata:
   name: $DEPLOYMENT_NAME
 spec:
   rules:
-    - host: $DEPLOYMENT_NAME.example.com
+    - host:
       http:
         paths:
           - path: /
