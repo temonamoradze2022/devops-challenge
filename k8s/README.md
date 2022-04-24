@@ -40,8 +40,8 @@ Github repository secrets are used to store sensitive information
 # Pipeline workflow
 Besides authentication and other helper steps, pipeline consists of following main steps
 - Run unit tests
-- Build docker image
-- Publish docker image
+- Build docker image 
+- Publish docker image (each new image is tagged with corresponding git commit hash)
 - Deploy application into GKE
 
 #Accessing booking-server application
