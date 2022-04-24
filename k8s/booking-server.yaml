@@ -19,6 +19,14 @@ spec:
           ports:
             - containerPort: 5000
               name: $DEPLOYMENT_NAME
+          env:
+            - name: POSTGRES_HOST
+              value: "pg-postgresql"
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pg-postgresql
+                  key: postgres-password
 ---
 apiVersion: v1
 kind: Service
