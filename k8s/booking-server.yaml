@@ -27,11 +27,29 @@ metadata:
   labels:
     app: $DEPLOYMENT_NAME
 spec:
-  type: NodePort
   ports:
     - port: 5000
-      nodePort: 31555
       targetPort: 5000
-      name: $DEPLOYMENT_NAME
   selector:
     app: $DEPLOYMENT_NAME
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: ingress-nginx
+  name: $DEPLOYMENT_NAME
+spec:
+  rules:
+    - host: $DEPLOYMENT_NAME.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: $DEPLOYMENT_NAME
+                port:
+                  number: 5000
+
